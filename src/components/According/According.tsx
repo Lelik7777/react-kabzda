@@ -1,7 +1,15 @@
 import React from 'react';
 
-export function According(props:any) {
+type AccordingType = {
+    title: string;
+    collapsed:boolean;
+}
+
+export function According(props: AccordingType) {
     console.log('According rendering')
+    if (props.collapsed){{
+        return <TitleAccording title={props.title}/>
+    }}
     return (
         <div>
             <TitleAccording title={props.title}/>
@@ -10,7 +18,11 @@ export function According(props:any) {
     )
 }
 
-function TitleAccording(props:any) {
+type AccordingTitleType = {
+    title: string;
+}
+
+function TitleAccording(props: AccordingTitleType) {
     console.log('TitleAccording rendering')
     return (
         <h2>{props.title}</h2>

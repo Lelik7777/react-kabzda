@@ -7,18 +7,22 @@ function App() {
     console.log('App rendering')
     return (
         <div className="App">
-            <TitleApp/>
-            <Rating value={1}/>
-            <According title={'list of books'}/>
+            <TitleApp title={'Component App1'}/>
+            <Rating value={4}/>
+            <According title={'list of books'} collapsed={true}/>
             <Rating value={0}/>
-            <According title={'list to buy'}/>
+            <According title={'list to buy'} collapsed={false}/>
         </div>
     );
 }
 
-function TitleApp() {
+type TitleAppType = {
+    title: string;
+}
+
+function TitleApp(props: TitleAppType) {
     console.log('TitleApp rendering')
-    return <>Component App</>
+    return <div>{props.title}</div>
 
 }
 
