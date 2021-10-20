@@ -1,37 +1,19 @@
 import React from 'react';
 import './App.css';
-import {log} from 'util';
+import {According} from './components/According/According';
+import {Rating} from './components/Rating/Rating';
 
 function App() {
     console.log('App rendering')
     return (
         <div className="App">
             <TitleApp/>
-            <Rating/>
-            <According/>
+            <Rating value={1}/>
+            <According title={'list of books'}/>
+            <Rating value={0}/>
+            <According title={'list to buy'}/>
         </div>
     );
-}
-
-function Rating() {
-
-    console.log('Rating rendering')
-    return (
-        <div>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-        </div>
-    )
-}
-
-function Star() {
-
-    console.log('Star rendering')
-    return (
-        <div>Star</div>
-    )
 }
 
 function TitleApp() {
@@ -40,34 +22,6 @@ function TitleApp() {
 
 }
 
-function According() {
-    console.log('According rendering')
-    return (
-        <div>
-            <TitleAccording/>
-            <BodyAccording/>
-        </div>
-    )
-}
-
-function TitleAccording() {
-    console.log('TitleAccording rendering')
-    return <h2>Menu</h2>
-}
-
-function BodyAccording() {
-    console.log('BodyAccording rendering')
-    return (
-        <div>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-            </ul>
-
-        </div>)
-}
 
 export default App;
 
