@@ -2,19 +2,31 @@ import React from 'react';
 
 type AccordingType = {
     title: string;
-    collapsed:boolean;
+    collapsed: boolean;
 }
 
 export function According(props: AccordingType) {
-    console.log('According rendering')
-    if (props.collapsed){{
-        return <TitleAccording title={props.title}/>
-    }}
+    //console.log('According rendering')
+    /* if (props.collapsed) {
+         {
+             return <TitleAccording title={props.title}/>
+         }
+     }
+     return (
+         <div>
+             <TitleAccording title={props.title}/>
+             <BodyAccording/>
+         </div>
+     )*/
+
     return (
-        <div>
-            <TitleAccording title={props.title}/>
-            <BodyAccording/>
-        </div>
+        props.collapsed ?
+            <TitleAccording title={props.title}/> :
+            <div>
+                <TitleAccording title={props.title}/>
+                <BodyAccording/>
+            </div>
+
     )
 }
 
