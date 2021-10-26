@@ -18,16 +18,23 @@ export function According(props: AccordingType) {
              <BodyAccording/>
          </div>
      )*/
+// by ternary operator
+    /* return (
+         props.collapsed ?
+             <TitleAccording title={props.title}/> :
+             <div>
+                 <TitleAccording title={props.title}/>
+                 <BodyAccording/>
+             </div>
 
+     )*/
     return (
-        props.collapsed ?
-            <TitleAccording title={props.title}/> :
-            <div>
-                <TitleAccording title={props.title}/>
-                <BodyAccording/>
-            </div>
-
+        <div>
+            <TitleAccording title={props.title}/>
+            {props.collapsed && <BodyAccording/>}
+        </div>
     )
+
 }
 
 type AccordingTitleType = {
