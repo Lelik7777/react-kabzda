@@ -2,24 +2,22 @@ import React from 'react';
 
 type RatingType = {
     value: 0 | 1 | 2 | 3 | 4;
-    countStars:number[];
+    countStars: number[];
 }
 
 export function Rating(props: RatingType) {
     //debugger
-    console.log(`Rating array ${props.countStars}`)
-
-    let count=props.value;
-    const mappedStars=props.countStars.map(x=>{
+    console.log(`Rating rendering`);
+    let count = props.value;
+    const mappedStars = props.countStars.map(x => {
         --count;
-        return count>=0?<Star selected={true}/>:<Star selected={false}/>
-        //return <Star selected={true}/>
+        return count >= 0 ? <Star selected={true}/> : <Star selected={false}/>
     });
-return(
-    <div>
-        {mappedStars}
-    </div>
-);
+    return (
+        <div>
+            {mappedStars}
+        </div>
+    );
 }
 
 type StarType = {

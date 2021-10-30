@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
-import {According} from './components/According/According';
-import {Rating} from './components/Rating/Rating';
+import {According} from './components/according/According';
+import {Rating} from './components/rating/Rating';
+import {OnOff} from './components/onOff/OnOff';
 
 function App() {
     console.log('App rendering');
@@ -13,6 +14,8 @@ function App() {
             <According title={'list of books'} collapsed={true}/>
             <Rating value={0} countStars={numberOfStars}/>
             <According title={'list to buy'} collapsed={false}/>
+            <OnOff value={true}/>
+            <OnOff value={false}/>
         </div>
     );
 }
@@ -29,4 +32,3 @@ function TitleApp(props: TitleAppType) {
 
 
 export default App;
-

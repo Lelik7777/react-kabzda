@@ -6,7 +6,7 @@ type AccordingType = {
 }
 
 export function According(props: AccordingType) {
-    //console.log('According rendering')
+    //console.log('according rendering')
     /* if (props.collapsed) {
          {
              return <TitleAccording title={props.title}/>
