@@ -14,8 +14,8 @@ function App() {
             <According title={'list of books'} collapsed={true}/>
             <Rating value={0} countStars={numberOfStars}/>
             <According title={'list to buy'} collapsed={false}/>
-            <OnOff value={true}/>
-            <OnOff value={false}/>
+            <OnOff/>
+        {/*    <OnOff value={false}/>*/}
         </div>
     );
 }
