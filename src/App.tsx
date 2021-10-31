@@ -3,6 +3,7 @@ import './App.css';
 import {According} from './components/according/According';
 import {Rating} from './components/rating/Rating';
 import {OnOff} from './components/onOff/OnOff';
+import {UncontrolledAccording} from './components/according/UncontrolledAccording';
 
 function App() {
     console.log('App rendering');
@@ -14,8 +15,9 @@ function App() {
             <According title={'list of books'} collapsed={true}/>
             <Rating value={0} countStars={numberOfStars}/>
             <According title={'list to buy'} collapsed={false}/>
+            <UncontrolledAccording title={'any list'}/>
             <OnOff/>
-        {/*    <OnOff value={false}/>*/}
+            {/*    <OnOff value={false}/>*/}
         </div>
     );
 }
