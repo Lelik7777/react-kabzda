@@ -6,7 +6,7 @@ import {OnOff} from './components/onOff/OnOff';
 
 function App() {
     console.log('App rendering');
-     const numberOfStars:number[]=[1,2,3,4];
+    const numberOfStars: number[] = [1, 2, 3, 4];
     return (
         <div className="App">
             <TitleApp title={'Component App1'}/>
