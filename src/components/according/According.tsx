@@ -3,6 +3,7 @@ import React from 'react';
 type AccordingType = {
     title: string;
     collapsed: boolean;
+    changeCollapsed: (c: boolean) => void;
 }
 
 export function According(props: AccordingType) {
@@ -30,7 +31,11 @@ export function According(props: AccordingType) {
      )*/
     return (
         <div>
-            <TitleAccording title={props.title}/>
+            <TitleAccording
+                title={props.title}
+                callBack={props.changeCollapsed}
+                collapsed={props.collapsed}
+            />
             {props.collapsed && <BodyAccording/>}
         </div>
     )
@@ -39,12 +44,14 @@ export function According(props: AccordingType) {
 
 type AccordingTitleType = {
     title: string;
+    callBack: (c: boolean) => void;
+    collapsed: boolean;
 }
 
 function TitleAccording(props: AccordingTitleType) {
     console.log('TitleAccording rendering')
     return (
-        <h2>{props.title}</h2>
+        <h2 onClick={() => props.callBack(props.collapsed)}>{props.title}</h2>
     )
 }
 

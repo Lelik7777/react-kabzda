@@ -3,10 +3,9 @@ import o from './OnOff.module.css';
 
 type PropsType = {
     value: boolean;
-    setValue:(v:boolean)=>void;
 }
-export const OnOff = ({value,setValue}:PropsType) => {
-
+export const UncontrolledOnOff = () => {
+    const [value, setValue] = useState<boolean>(false);
     const styleTrue = {
         backgroundColor: value ? 'green' : '#fff',
     };
