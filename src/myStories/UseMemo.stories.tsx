@@ -1,10 +1,10 @@
-import React, {useMemo, useState} from 'react';
+import React, {ChangeEvent, useMemo, useState} from 'react';
 
 export default {
     title: ' useMemo demo'
 }
 
-export const Exp = () => {
+export const ExpOfUseMemo = () => {
     const [num1, setNum1] = useState<number>(1);
     const [num2, setNum2] = useState<number>(1);
 
@@ -28,17 +28,50 @@ export const Exp = () => {
     for (let i = 1; i <= num2; i++) {
         res2 *= i;
     }
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => setNum1(+e.currentTarget.value);
+    const onChange1 = (e: ChangeEvent<HTMLInputElement>) => setNum2(+e.currentTarget.value);
     return <div style={{display: 'flex'}}>
 
         <div>
-            <input type="text" value={num1} onChange={(e) => setNum1(+e.currentTarget.value)}/>
+            <input type="text" value={num1} onChange={onChange}/>
             <div>{res1}</div>
         </div>
 
         <div>
-            <input type="text" value={num2} onChange={(e) => setNum2(+e.currentTarget.value)}/>
+            <input type="text" value={num2} onChange={onChange1}/>
             <div>{res2}</div>
         </div>
 
     </div>
+}
+const Child = React.memo(({data}: { data: string[] }) => {
+    console.log('render child');
+    return <>
+        {data.map((x, i) => <div key={i}>{x}</div>)}
+    </>
+});
+
+const Parent = () => {
+    console.log('render parent')
+
+    const [data, setData] = useState<string[]>(['tom', 'alex', 'ann', 'toby']);
+    const [value, setValue] = useState('');
+
+    const changingData = useMemo(() => {
+        console.log('use memo')
+        return data.filter(x => x);
+    }, [data]);
+    return (
+        <div>
+
+            <Child data={changingData}/>
+            <button onClick={()=>setData([...data,'new user'])}>add user</button>
+            <input value={value} onChange={(e) => setValue(e.currentTarget.value)}/>
+        </div>
+    );
+}
+export const Exp2 = () => {
+    return <>
+        <Parent/>
+    </>
 }
