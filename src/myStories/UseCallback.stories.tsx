@@ -19,15 +19,16 @@ export const Example03 = () => {
 const Parent = () => {
     console.log({Parent})
     const [value, setValue] = useState(false);
-    const callback =useCallback( () => setValue(!value),[setValue,value]);
+    const callback = useCallback(() => setValue(!value),[setValue,value]);
     return (<>
 
         <Child callback={callback}/>
     </>)
 };
-const Child = React.memo(({callback}: { callback: () => void }) => {
+const Child = ({callback}: { callback: () => void }) => {
     console.log({Child})
     return (<div>
         <button onClick={callback}>change state from child</button>
     </div>)
-});
+};
+
