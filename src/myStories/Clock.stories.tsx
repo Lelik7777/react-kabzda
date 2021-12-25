@@ -9,7 +9,6 @@ export const Clock = () => {
 
     let [time, setTime] = useState(new Date().toUTCString());
     let [count, setCount] = useState(0);
-    //  let interval: ReturnType<typeof setInterval>
 
     useEffect(() => {
         console.log(1)
@@ -24,11 +23,6 @@ export const Clock = () => {
         };
     }, []);
 
-    // useEffect(() => {
-    //     // console.log(1)
-    //
-    //     return () => interval && clearInterval(interval);
-    // }, [])
     return (<div>
         {time}
         <br/>
