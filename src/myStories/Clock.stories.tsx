@@ -1,7 +1,10 @@
 import React, {useEffect, useState} from 'react';
+import {ClockMy} from '../components/clockMy/Clock';
+
 
 export default {
-    title: 'Clock'
+    title: 'Clock',
+    component:ClockMy,
 }
 
 export const Clock = () => {
@@ -28,4 +31,14 @@ export const Clock = () => {
         <br/>
         {count}
     </div>)
+};
+
+export const Example = () => {
+    const [toggle,setToogle]=useState(false);
+  return(
+      <>
+          <button onClick={()=>setToogle(!toggle)}>toggle clock</button>
+      <ClockMy type={toggle}/>
+      </>
+  )
 }
