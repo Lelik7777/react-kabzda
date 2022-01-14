@@ -39,3 +39,6 @@ const Input = ({callback}: { callback: (v: string) => void }) => {
         </div>
     )
 }
+const array:{name:string}[]=[];
+const array2=[{name:'alex'},{name:'bob'}];
+console.log([...array,...array2])
