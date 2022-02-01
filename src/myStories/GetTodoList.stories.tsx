@@ -98,7 +98,7 @@ export const AddTask = () => {
         todoListApp.getLists().then(res => {
             if (res.data[0].id) {
                 todoListApp.addTask(res.data[0].id, `task added: ${new Date().toLocaleTimeString()}`)
-                    .then(res => setState(res.data));
+                    .then((res) => setState(res.data));
             }
         });
     }, []);
