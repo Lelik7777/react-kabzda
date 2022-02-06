@@ -6,6 +6,7 @@ import {UncontrolledOnOff} from './components/onOff/UncontrolledOnOff';
 import {UncontrolledAccording} from './components/according/UncontrolledAccording';
 import {UncontrolledRating} from './components/rating/UncontrolledRating';
 import {OnOff} from './components/onOff/OnOff';
+import {RenderMovie} from './components/useMemo/RenderMovie';
 
 function App() {
     console.log('App rendering');
@@ -30,6 +31,8 @@ function App() {
             <UncontrolledOnOff/>
             <OnOff value={value} setValue={setValue}/>
             {/*    <OnOff value={false}/>*/}
+            //example how React.memo() work
+        <RenderMovie/>
         </div>
     );
 }

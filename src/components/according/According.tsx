@@ -49,14 +49,14 @@ type AccordingTitleType = {
 }
 
 function TitleAccording(props: AccordingTitleType) {
-    console.log('TitleAccording rendering')
+   // console.log('TitleAccording rendering')
     return (
         <h2 onClick={() => props.callBack(props.collapsed)}>{props.title}</h2>
     )
 }
 
 function BodyAccording() {
-    console.log('BodyAccording rendering')
+    //console.log('BodyAccording rendering')
     return (
         <ul>
             <li>1</li>

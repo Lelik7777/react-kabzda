@@ -7,7 +7,7 @@ type RatingType = {
 
 export function Rating(props: RatingType) {
     //debugger
-    console.log(`Rating rendering`);
+    //console.log(`Rating rendering`);
     let count = props.value;
     const mappedStars = props.countStars.map(x => {
         --count;
@@ -32,7 +32,7 @@ function Star(props: StarType) {
     )
 
 
-    console.log('Star rendering')
+    //console.log('Star rendering')
     /*if (props.selected)
         return <b><span> Star </span></b>
     else

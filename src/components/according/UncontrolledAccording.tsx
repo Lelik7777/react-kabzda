@@ -26,7 +26,7 @@ type AccordingTitleType = {
 }
 
 function TitleAccording({title, setCollapsed, collapsed}: AccordingTitleType) {
-    console.log('TitleAccording rendering')
+    //console.log('TitleAccording rendering')
     const onClick = () => setCollapsed(!collapsed);
     return (
         <h2 onClick={onClick}>{title}</h2>
@@ -34,7 +34,7 @@ function TitleAccording({title, setCollapsed, collapsed}: AccordingTitleType) {
 }
 
 function BodyAccording() {
-    console.log('BodyAccording rendering')
+    //console.log('BodyAccording rendering')
     return (
         <ul>
             <li>1</li>
