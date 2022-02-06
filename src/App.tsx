@@ -6,7 +6,7 @@ import {UncontrolledOnOff} from './components/onOff/UncontrolledOnOff';
 import {UncontrolledAccording} from './components/according/UncontrolledAccording';
 import {UncontrolledRating} from './components/rating/UncontrolledRating';
 import {OnOff} from './components/onOff/OnOff';
-import {RenderMovie} from './components/useMemo/RenderMovie';
+import {RenderMovie} from './components/hoc ReactMemo/RenderMovie';
 
 function App() {
     console.log('App rendering');

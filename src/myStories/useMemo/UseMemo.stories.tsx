@@ -1,7 +1,7 @@
 import React, {ChangeEvent, useMemo, useState} from 'react';
 
 export default {
-    title: ' useMemo demo'
+    title: ' hoc ReactMemo demo'
 }
 
 export const ExpOfUseMemo = () => {
