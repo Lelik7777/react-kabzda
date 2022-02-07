@@ -3,7 +3,7 @@ import React, {ChangeEvent, useMemo, useState} from 'react';
 export default {
     title: ' hoc ReactMemo demo'
 }
-
+//using useMemo() for difficult counting
 export const ExpOfUseMemo = () => {
     const [num1, setNum1] = useState<number>(1);
     const [num2, setNum2] = useState<number>(1);
@@ -44,6 +44,8 @@ export const ExpOfUseMemo = () => {
 
     </div>
 }
+
+//using useMemo() for pass array.filter in props
 const Child = React.memo(({data}: { data: string[] }) => {
     console.log('render child');
     return <>
@@ -75,3 +77,4 @@ export const Exp2 = () => {
         <Parent/>
     </>
 }
+
