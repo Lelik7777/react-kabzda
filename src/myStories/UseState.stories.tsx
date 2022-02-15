@@ -17,3 +17,16 @@ export const Count = () => {
       </div>
   )
 }
+//variant when useState accept function reference
+export const ExampleWithFunRef = () => {
+  const [value,setValue]=useState(sum(4,5));
+    function sum(a:number,b:number) {
+      return a+b;
+  }
+  return(
+      <div>
+<button onClick={()=>setValue(value+1)}>add</button>
+          <input type="text" value={value}/>
+      </div>
+  )
+}
